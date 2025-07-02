@@ -1,0 +1,12 @@
+flask
+flask-cors
+flask-mail
+werkzeug
+gunicorn
+stripe
+thefuzz
+python-Levenshtein
+sentence-transformers
+torch
+numpy
+python-docx
