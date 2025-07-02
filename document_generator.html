@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Generator | GranterAI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .sidebar-item-active {
+            background-color: #fdf2e9;
+            color: #c2410c;
+            font-weight: 600;
+        }
+        .sidebar-item-active svg {
+            color: #f97316;
+        }
+        .cta-gradient {
+             background: linear-gradient(90deg, #10b981, #059669);
+        }
+        /* Style for selected radio button label */
+        input:checked + label {
+            border-color: #10b981;
+            background-color: #ecfdf5;
+            color: #065f46;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="flex h-screen bg-gray-100">
+        <aside class="w-72 bg-white shadow-lg flex-shrink-0 flex flex-col">
+            <div class="p-6 border-b border-gray-200">
+                <a href="index.html" class="text-2xl font-bold text-[#059669]">GranterAI</a>
+            </div>
+            <nav class="flex-1 px-4 py-4 space-y-4">
+                <div>
+                    <h3 class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Workspace</h3>
+                    <a href="#" class="group flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-orange-600">
+                        <svg class="w-6 h-6 mr-3 text-gray-400 group-hover:text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                        My Charity Profile
+                    </a>
+                </div>
+                 <div>
+                    <h3 class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Fundraising</h3>
+                    <a href="dashboard.html" class="group flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-orange-600">
+                        <svg class="w-6 h-6 mr-3 text-gray-400 group-hover:text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg> 
+                        My Projects
+                    </a>
+                     <a href="pipeline.html" class="group flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-orange-600">
+                        <svg class="w-6 h-6 mr-3 text-gray-400 group-hover:text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                        My Pipeline
+                    </a>
+                </div>
+                <div>
+                    <h3 class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Tools</h3>
+                     <a href="database_explorer.html" class="group flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-orange-600">
+                         <svg class="w-6 h-6 mr-3 text-gray-400 group-hover:text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        Database Explorer
+                    </a>
+                     <a href="#" class="group flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-orange-600 sidebar-item-active">
+                        <svg class="w-6 h-6 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        Document Generator
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="flex-1 flex flex-col overflow-hidden">
+             <header class="bg-white border-b border-gray-200 p-4">
+                <h1 class="text-2xl font-semibold text-gray-800">AI Document Generator</h1>
+            </header>
+            
+            <div class="flex-1 overflow-y-auto p-6 md:p-8">
+                <div class="max-w-2xl mx-auto">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-lg font-medium leading-6 text-gray-900"><span class="bg-green-100 text-green-700 font-bold rounded-full px-3 py-1">1</span> Select Your Project</h3>
+                                <p class="mt-1 text-sm text-gray-500">Choose the fundraising project this document is for.</p>
+                                <select id="project-select" class="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500">
+                                    <option>Annual Fundraiser 2025</option>
+                                    <option>Capital Campaign</option>
+                                    <option>Youth Literacy Program</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <h3 class="text-lg font-medium leading-6 text-gray-900"><span class="bg-green-100 text-green-700 font-bold rounded-full px-3 py-1">2</span> Select a Foundation</h3>
+                                <p class="mt-1 text-sm text-gray-500">Choose a foundation from your pipeline.</p>
+                                <select id="foundation-select" class="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500">
+                                    <option>The Education Excellence Foundation</option>
+                                    <option>Community Health Initiative</option>
+                                    <option>The Builders Foundation</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <h3 class="text-lg font-medium leading-6 text-gray-900"><span class="bg-green-100 text-green-700 font-bold rounded-full px-3 py-1">3</span> Choose a Document to Generate</h3>
+                                <p class="mt-1 text-sm text-gray-500">Our AI will create a personalized first draft for you.</p>
+                                <fieldset class="mt-4">
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <input type="radio" name="doc_type" id="doc_loi" value="loi" class="sr-only" checked>
+                                            <label for="doc_loi" class="flex flex-col items-center justify-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer">
+                                                <span class="font-semibold">Letter of Inquiry</span>
+                                                <span class="text-xs text-gray-500">First contact</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="doc_type" id="doc_proposal" value="proposal" class="sr-only">
+                                            <label for="doc_proposal" class="flex flex-col items-center justify-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer">
+                                                <span class="font-semibold">Full Proposal</span>
+                                                <span class="text-xs text-gray-500">After invitation</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="doc_type" id="doc_thank_you" value="thank_you" class="sr-only">
+                                            <label for="doc_thank_you" class="flex flex-col items-center justify-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer">
+                                                <span class="font-semibold">Thank You Letter</span>
+                                                <span class="text-xs text-gray-500">After receiving grant</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="doc_type" id="doc_report" value="report" class="sr-only">
+                                            <label for="doc_report" class="flex flex-col items-center justify-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer">
+                                                <span class="font-semibold">Progress Report</span>
+                                                <span class="text-xs text-gray-500">Update on funded project</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <button id="generate-btn" class="mt-6 w-full cta-gradient text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center justify-center">
+                                    <svg id="generate-icon" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                    <svg id="loading-spinner" class="animate-spin h-5 w-5 mr-3 hidden" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                                    <span id="generate-btn-text">Generate Document</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="result-section" class="bg-white mt-8 p-8 rounded-xl shadow-lg hidden">
+                         <h3 id="result-title" class="text-xl font-semibold mb-4 text-gray-900">AI-Generated Content</h3>
+                         <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <p id="ai-paragraph" class="text-gray-700 text-sm">
+                                </p>
+                         </div>
+                         <button id="download-btn" class="mt-6 w-full bg-orange-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-orange-600 transition-colors duration-300 flex items-center justify-center">
+                             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                            Download .docx
+                         </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const generateBtn = document.getElementById('generate-btn');
+        const generateBtnText = document.getElementById('generate-btn-text');
+        const generateIcon = document.getElementById('generate-icon');
+        const loadingSpinner = document.getElementById('loading-spinner');
+        const resultSection = document.getElementById('result-section');
+        const resultTitle = document.getElementById('result-title');
+        const aiParagraph = document.getElementById('ai-paragraph');
+
+        // Mock AI responses for different document types
+        const aiResponses = {
+            loi: "Given your long-standing support for youth arts and education, our 'Music & Mentorship' program represents a perfect alignment with The Education Excellence Foundation's mission. Your past grants to City Year and Tech For All demonstrate a clear commitment to providing underserved students with the tools they need to succeed. Our project builds directly on that legacy by offering a safe, creative, and supportive environment where at-risk youth can thrive both academically and personally.",
+            proposal: "This full proposal outlines our 'Music & Mentorship' program, detailing the budget, timeline, and measurable outcomes. Building upon our initial Letter of Inquiry, we are confident this project aligns with your strategic goals of fostering educational excellence and providing opportunities for at-risk youth, as evidenced by your prior support for similar initiatives.",
+            thank_you: "On behalf of the entire Urban Youth Arts Collective, thank you for your generous gift. Your support is instrumental in launching our 'Music & Mentorship' program and will directly impact the lives of 50 students in our community. We are honored to partner with a foundation that shares our commitment to empowering the next generation through the arts.",
+            report: "This progress report outlines the successful launch of our 'Music & Mentorship' program, made possible by your foundation's generous support. In the first quarter, we have enrolled 50 students, provided over 400 hours of music instruction, and have seen a 15% improvement in school attendance among participants. We are on track to meet all our stated goals."
+        };
+
+        generateBtn.addEventListener('click', () => {
+            const selectedDocType = document.querySelector('input[name="doc_type"]:checked').value;
+            
+            generateBtnText.textContent = 'Generating...';
+            generateIcon.classList.add('hidden');
+            loadingSpinner.classList.remove('hidden');
+            generateBtn.disabled = true;
+            resultSection.classList.add('hidden');
+
+            setTimeout(() => {
+                generateBtnText.textContent = 'Generate Document';
+                generateIcon.classList.remove('hidden');
+                loadingSpinner.classList.add('hidden');
+                generateBtn.disabled = false;
+
+                resultTitle.textContent = `AI-Generated Content for: ${document.querySelector(`label[for="doc_${selectedDocType}"]`).children[0].textContent}`;
+                aiParagraph.textContent = aiResponses[selectedDocType];
+                resultSection.classList.remove('hidden');
+
+            }, 2500);
+        });
+    </script>
+</body>
+</html>

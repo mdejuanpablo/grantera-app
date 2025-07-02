@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | GranterAI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="master_stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .sidebar-item-active {
+            background-color: #fdf2e9; /* A soft orange for active state */
+            color: #c2410c; /* A darker orange text for contrast */
+            font-weight: 600;
+        }
+        .sidebar-item-active svg {
+            color: #f97316; /* orange-500 */
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="flex h-screen bg-gray-100">
+        <aside class="w-72 bg-white shadow-lg flex-shrink-0 flex flex-col">
+            <div class="p-6 border-b border-gray-200">
+                <a href="index.html" class="flex items-center">
+                     <img src="grantera-high-resolution-logo-transparent.png" alt="Grantera Logo" class="h-10 w-auto">
+                </a>
+            </div>
+            <nav class="flex-1 px-4 py-4 space-y-4">
+                <div>
+                    <h3 class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Workspace</h3>
+                    <a href="onboarding.html" class="group flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors duration-200">
+                        <svg class="w-6 h-6 mr-3 text-gray-400 group-hover:text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                        My Charity Profile
+                    </a>
+                </div>
+                <div>
+                    <h3 class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Fundraising Projects</h3>
+                    <div id="projects-list" class="space-y-1">
+                    </div>
+                </div>
+                 <div>
+                    <h3 class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Tools</h3>
+                    <a href="pipeline.html" class="group flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors duration-200">
+                        <svg class="w-6 h-6 mr-3 text-gray-400 group-hover:text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                        My Pipeline
+                    </a>
+                    <a href="document_generator.html" class="group flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors duration-200">
+                        <svg class="w-6 h-6 mr-3 text-gray-400 group-hover:text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        Document Generator
+                    </a>
+                    <a href="database_explorer.html" class="group flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors duration-200">
+                        <svg class="w-6 h-6 mr-3 text-gray-400 group-hover:text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        Database Explorer
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="flex-1 flex flex-col overflow-hidden">
+            <div class="flex-1 overflow-y-auto p-6 md:p-8">
+                <div id="project-header"></div>
+                <div id="loading-banner" class="bg-blue-100 border-l-4 border-blue-500 text-blue-800 p-6 rounded-lg shadow-md mb-8 flex items-center space-x-4">
+                    <svg class="animate-spin h-8 w-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                    <div><h3 class="font-bold text-lg">Generating Your Matches</h3><p>Our AI is analyzing millions of records to find your best prospects. This may take a few moments.</p></div>
+                </div>
+                <div id="match-list" class="space-y-4"></div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const projects = { 1: { name: "Annual Fundraiser 2025", description: "Seeking operational support for our core programs." }, 2: { name: "Capital Campaign", description: "Raising funds to build a new community center." }, 3: { name: "Youth Literacy Program", description: "A new initiative to provide books and tutoring." }};
+        const foundationData = { 101: { name: "Community Health Initiative", location: "New York, NY", score: 91.2, assets: 125000000, statesGivenTo: 15 }, 102: { name: "The Giving Tree Foundation", location: "Boston, MA", score: 88.5, assets: 78000000, statesGivenTo: 1 }, 201: { name: "The Builders Foundation", location: "Austin, TX", score: 94.1, assets: 250000000, statesGivenTo: 30 }, 202: { name: "Generations Fund", location: "Chicago, IL", score: 86.7, assets: 95000000, statesGivenTo: 5 }, 301: { name: "Education Excellence Foundation", location: "San Francisco, CA", score: 95.8, assets: 50000000, statesGivenTo: 22 }, 302: { name: "The Children's Literacy Project", location: "Boston, MA", score: 92.3, assets: 22000000, statesGivenTo: 3 }};
+        const foundationMatches = { 1: [101, 102], 2: [201, 202], 3: [301, 302] };
+
+        const projectsListEl = document.getElementById('projects-list');
+        const projectHeaderEl = document.getElementById('project-header');
+        const matchListEl = document.getElementById('match-list');
+        const loadingBannerEl = document.getElementById('loading-banner');
+        let activeProjectId = 1;
+
+        function renderProjectsList() {
+            projectsListEl.innerHTML = '';
+            Object.keys(projects).forEach(id => {
+                const project = projects[id];
+                const item = document.createElement('a');
+                item.href = "#";
+                item.className = `group flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-orange-600 ${id == activeProjectId ? 'sidebar-item-active' : ''}`;
+                item.innerHTML = `<svg class="w-6 h-6 mr-3 text-gray-400 group-hover:text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg> ${project.name}`;
+                item.dataset.id = id;
+                item.addEventListener('click', e => { e.preventDefault(); activeProjectId = id; renderProjectsList(); renderProjectContent(); });
+                projectsListEl.appendChild(item);
+            });
+        }
+
+        function renderProjectContent() {
+            loadingBannerEl.style.display = 'flex';
+            matchListEl.innerHTML = '';
+            projectHeaderEl.innerHTML = `<h1 class="text-3xl font-bold text-gray-900">${projects[activeProjectId].name}</h1><p class="text-gray-600 mt-1">${projects[activeProjectId].description}</p>`;
+            
+            setTimeout(() => {
+                loadingBannerEl.style.display = 'none';
+                const matchIds = foundationMatches[activeProjectId] || [];
+                if (matchIds.length === 0) {
+                    matchListEl.innerHTML = '<p class="text-center text-gray-500">No matches found for this project.</p>';
+                    return;
+                }
+                matchIds.forEach(id => {
+                    const match = foundationData[id];
+                    const cardLink = document.createElement('a'); // Use an anchor tag for the whole card
+                    cardLink.href = `foundation_profile.html?id=${id}`; // Set the link
+                    cardLink.className = "match-card block bg-white p-6 rounded-xl shadow-md border border-gray-200 hover:shadow-lg hover:border-green-500 transition-all duration-300";
+                    cardLink.dataset.foundationId = id;
+                    cardLink.innerHTML = `
+                        <div class="flex items-start justify-between">
+                            <div class="flex items-start gap-6">
+                                <div class="flex-shrink-0 text-center w-20">
+                                    <div class="text-4xl font-extrabold text-orange-500">${match.score.toFixed(1)}</div>
+                                    <div class="text-xs text-gray-500 uppercase font-semibold">Match Score</div>
+                                </div>
+                                <div class="flex-grow">
+                                    <h3 class="text-lg font-bold text-gray-900">${match.name}</h3>
+                                    <p class="text-sm text-gray-500">${match.location}</p>
+                                    <div class="flex flex-wrap items-center gap-2 mt-3">
+                                       <span class="inline-flex items-center px-2.5 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">$${(match.assets / 1000000).toFixed(0)}M Assets</span>
+                                       ${match.statesGivenTo > 1 ? `<span class="inline-flex items-center px-2.5 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded-full">National Giver</span>` : ''}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 flex items-center gap-2">
+                                <button title="Dismiss Match" class="dislike-btn p-2 rounded-full text-gray-400 hover:text-red-500 hover:bg-red-100 transition-colors" data-foundation-id="${id}">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.738 3h4.017c.163 0 .326.02.485.06L17 4m-7 10v5a2 2 0 002 2h.085a2 2 0 001.736-.97l2.714-4.224a2 2 0 011.736-1.03H19.5a2 2 0 002-2v-2.5a2 2 0 00-2-2h-2.5"></path></svg>
+                                </button>
+                                <button title="Add to Pipeline" class="like-btn p-2 rounded-full text-gray-400 hover:text-green-500 hover:bg-green-100 transition-colors" data-foundation-id="${id}">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.085a2 2 0 00-1.736.97l-2.714 4.224a2 2 0 01-1.736 1.03H4.5a2 2 0 00-2 2v2.5a2 2 0 002 2h2.5"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    matchListEl.appendChild(cardLink);
+                });
+                addCardActionListeners();
+            }, 1500);
+        }
+
+        function addCardActionListeners() {
+            document.querySelectorAll('.like-btn, .dislike-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent the link from being followed
+                    e.stopPropagation(); // Stop the event from bubbling up to the <a> tag
+                    
+                    const foundationId = e.currentTarget.dataset.foundationId;
+                    const card = e.currentTarget.closest('.match-card');
+
+                    if (e.currentTarget.classList.contains('like-btn')) {
+                        console.log(`Liked: ${foundationData[foundationId].name}`);
+                        alert(`Added ${foundationData[foundationId].name} to your pipeline.`);
+                        card.style.opacity = '0.5';
+                        e.currentTarget.disabled = true;
+                    } else {
+                        console.log(`Disliked: ${foundationData[foundationId].name}`);
+                        alert(`Dismissed ${foundationData[foundationId].name} for this project.`);
+                        card.remove();
+                    }
+                });
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProjectsList();
+            renderProjectContent();
+        });
+    </script>
+</body>
+</html>

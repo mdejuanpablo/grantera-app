@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GranterAI | Build Your Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="master_stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style> body { font-family: 'Inter', sans-serif; } </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-white shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="grantera-high-resolution-logo-transparent.png" alt="Grantera Logo" class="h-10 w-auto">
+            </a>
+            <span class="text-gray-500">Onboarding</span>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-16">
+        <div class="max-w-4xl mx-auto">
+            
+            <form id="onboarding-form" class="bg-white p-8 rounded-2xl shadow-lg">
+                <div class="mb-12">
+                     <h1 class="text-3xl font-extrabold text-gray-900 text-center">Build Your Profile</h1>
+                     <p class="text-center text-lg text-gray-600 mt-2">Let's get the essential details to power up your AI matches.</p>
+                     <div class="mt-8 flex w-full items-center">
+                         <div class="w-1/3 text-center step step-active" data-step="1"><div class="step-circle relative z-10 mx-auto flex h-8 w-8 items-center justify-center rounded-full border-2 font-bold">1</div><p class="step-label mt-2 hidden text-sm font-semibold md:block">Charity Info</p></div>
+                         <div class="flex-1 -mx-4"><div class="h-0.5 bg-gray-200 step-line"></div></div>
+                         <div class="w-1/3 text-center step" data-step="2"><div class="step-circle relative z-10 mx-auto flex h-8 w-8 items-center justify-center rounded-full border-2 border-gray-300 font-bold text-gray-500">2</div><p class="step-label mt-2 hidden text-sm font-semibold text-gray-500 md:block">Contact Info</p></div>
+                         <div class="flex-1 -mx-4"><div class="h-0.5 bg-gray-200 step-line"></div></div>
+                         <div class="w-1/3 text-center step" data-step="3"><div class="step-circle relative z-10 mx-auto flex h-8 w-8 items-center justify-center rounded-full border-2 border-gray-300 font-bold text-gray-500">3</div><p class="step-label mt-2 hidden text-sm font-semibold text-gray-500 md:block">Project Details</p></div>
+                     </div>
+                </div>
+
+                <div class="mt-8 space-y-8">
+                    <div class="form-step active" data-step="1">
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-900">1. Charity Information</h2>
+                            <p class="text-gray-500 mt-1">Tell us about the organization you represent.</p>
+                             <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="md:col-span-2"><label for="charity_name" class="block text-sm font-medium text-gray-700">Official Charity Name</label><input type="text" name="charity_name" id="charity_name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"></div>
+                                <div><label for="charity_ein" class="block text-sm font-medium text-gray-700">Charity EIN / Reg. No.</label><input type="text" name="charity_ein" id="charity_ein" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"></div>
+                                <div><label for="charity_phone" class="block text-sm font-medium text-gray-700">Charity Phone</label><input type="tel" name="charity_phone" id="charity_phone" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"></div>
+                                <div class="md:col-span-2"><label for="address_1" class="block text-sm font-medium text-gray-700">Mailing Address</label><input type="text" name="address_1" id="address_1" required placeholder="Street Address" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"></div>
+                                <div><label for="country" class="block text-sm font-medium text-gray-700">Country</label><select id="country" name="country" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"><option value="">Select Country</option></select></div>
+                                <div><label for="state" class="block text-sm font-medium text-gray-700">State / Province</label><select id="state" name="state" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 disabled:bg-gray-200" disabled><option value="">Select State / Province</option></select></div>
+                                <div><label for="city" class="block text-sm font-medium text-gray-700">City</label><input type="text" name="city" id="city" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"></div>
+                                <div><label for="zip_code" class="block text-sm font-medium text-gray-700">ZIP / Postal Code</label><input type="text" name="zip_code" id="zip_code" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-step hidden" data-step="2">
+                         <div>
+                            <h2 class="text-xl font-bold text-gray-900">2. Your Contact Information</h2>
+                            <p class="text-gray-500 mt-1">Who should we address our communications to?</p>
+                            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div><label for="contact_name" class="block text-sm font-medium text-gray-700">Full Name</label><input type="text" name="contact_name" id="contact_name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"></div>
+                                <div><label for="contact_title" class="block text-sm font-medium text-gray-700">Title / Role</label><input type="text" name="contact_title" id="contact_title" placeholder="e.g., Executive Director" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"></div>
+                                <div class="md:col-span-2"><label for="contact_phone" class="block text-sm font-medium text-gray-700">Phone Number</label><input type="tel" name="contact_phone" id="contact_phone" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-step hidden" data-step="3">
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-900">3. Project Details</h2>
+                            <p class="text-gray-500 mt-1">Provide the details our AI needs to find your perfect matches.</p>
+                            <div class="mt-6 grid grid-cols-1 gap-y-6">
+                                <div><label for="mission_statement" class="block text-sm font-medium text-gray-700">Your Organization's Mission Statement (Min. 30 words)</label><textarea id="mission_statement" name="mission_statement" rows="4" required minlength="150" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500" placeholder="e.g., Our mission is to end homelessness..."></textarea></div>
+                                <div><label for="program_description" class="block text-sm font-medium text-gray-700">Detailed Program Description (Min. 50 words)</label><textarea id="program_description" name="program_description" rows="6" required minlength="250" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500" placeholder="Be specific! Describe the activities, goals..."></textarea></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-8 flex justify-between">
+                    <button type="button" id="prev-btn" class="bg-gray-200 text-gray-800 font-bold py-3 px-8 rounded-lg hover:bg-gray-300 transition-colors hidden">Previous</button>
+                    <button type="button" id="next-btn" class="cta-gradient text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 ml-auto">Next Step</button>
+                    <button type="submit" id="submit-btn" class="cta-gradient text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 hidden">Create Profile & Find Matches</button>
+                </div>
+                <div id="form-status" class="mt-4 text-center text-sm font-medium"></div>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Dropdown logic remains the same
+            const countrySelect = document.getElementById('country');
+            const stateSelect = document.getElementById('state');
+            const locations = { "United States": ["Alabama", "Alaska", "etc."], "Canada": ["Alberta", "British Columbia", "etc."] };
+            // ... (Full dropdown logic here)
+
+            // Stepper navigation logic remains the same
+            const form = document.getElementById('onboarding-form');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            // ... (Full stepper navigation logic here)
+
+            // === UPDATED FORM SUBMISSION LOGIC ===
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const submitBtn = document.getElementById('submit-btn');
+                const statusDiv = document.getElementById('form-status');
+
+                if (!validateStep(currentStep)) return;
+
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="flex items-center justify-center">Saving... <svg class="animate-spin ml-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg></span>';
+                statusDiv.textContent = '';
+
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData.entries());
+
+                try {
+                    const response = await fetch('http://127.0.0.1:5000/api/save-profile', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data),
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        statusDiv.className = 'text-green-600';
+                        statusDiv.textContent = 'Profile saved! Redirecting to your dashboard...';
+                        setTimeout(() => {
+                            window.location.href = 'dashboard.html';
+                        }, 1500);
+                    } else {
+                        throw new Error(result.error || 'Failed to save profile.');
+                    }
+                } catch (error) {
+                    statusDiv.className = 'text-red-600';
+                    statusDiv.textContent = `An error occurred. Please try again.`;
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Create Profile & Find Matches';
+                }
+            });
+
+            // Full stepper and dropdown JS
+            for (const country in locations) {
+                countrySelect.add(new Option(country, country));
+            }
+            countrySelect.addEventListener('change', () => {
+                stateSelect.innerHTML = '<option value="">Select State / Province</option>';
+                const selectedCountry = countrySelect.value;
+                if (selectedCountry && locations[selectedCountry]) {
+                    stateSelect.disabled = false;
+                    locations[selectedCountry].forEach(state => stateSelect.add(new Option(state, state)));
+                } else {
+                    stateSelect.disabled = true;
+                }
+            });
+            const steps = document.querySelectorAll('.form-step');
+            const stepperIndicators = document.querySelectorAll('.step');
+            const submitBtn = document.getElementById('submit-btn');
+            let currentStep = 1;
+
+            const updateButtonsAndStepper = () => {
+                prevBtn.classList.toggle('hidden', currentStep === 1);
+                nextBtn.classList.toggle('hidden', currentStep === steps.length);
+                submitBtn.classList.toggle('hidden', currentStep !== steps.length);
+                stepperIndicators.forEach(indicator => {
+                    const indicatorStep = parseInt(indicator.dataset.step);
+                    indicator.classList.remove('step-active', 'step-completed');
+                    if (indicatorStep < currentStep) {
+                        indicator.classList.add('step-completed');
+                    } else if (indicatorStep === currentStep) {
+                        indicator.classList.add('step-active');
+                    }
+                });
+            };
+
+            const goToStep = (stepNumber) => {
+                steps.forEach(step => {
+                    step.classList.toggle('hidden', parseInt(step.dataset.step) !== stepNumber);
+                });
+                currentStep = stepNumber;
+                updateButtonsAndStepper();
+            };
+
+            const validateStep = (stepNumber) => {
+                const stepDiv = document.querySelector(`.form-step[data-step="${stepNumber}"]`);
+                const inputs = stepDiv.querySelectorAll('input[required], textarea[required], select[required]');
+                for (const input of inputs) {
+                    if (!input.reportValidity()) {
+                        return false;
+                    }
+                }
+                return true;
+            };
+
+            nextBtn.addEventListener('click', () => {
+                if (validateStep(currentStep) && currentStep < steps.length) {
+                    goToStep(currentStep + 1);
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentStep > 1) {
+                    goToStep(currentStep - 1);
+                }
+            });
+            
+            updateButtonsAndStepper();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+.cta-gradient {
+    background: linear-gradient(90deg, #10b981, #059669);
+}
+
+/* --- Onboarding Stepper --- */
+.step-circle {
+    transition: background-color 0.4s ease-in-out, border-color 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+.step-line {
+    transition: background-color 0.4s ease-in-out;
+}
+
+/* Style for the current, active step */
+.step-active .step-circle {
+    border-color: #10b981; /* green-500 */
+    background-color: #10b981;
+    color: white;
+}
+.step-active .step-label {
+    color: #059669; /* green-600 */
+    font-weight: 600;
+}
+
+/* Style for a step that has been completed */
+.step-completed .step-circle {
+    border-color: #10b981;
+    background-color: #10b981;
+    color: white;
+}
+.step-completed .step-line {
+    background-color: #10b981;
+}

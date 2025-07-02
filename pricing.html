@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | GranterAI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .cta-gradient {
+            background: linear-gradient(90deg, #10b981, #059669);
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #059669;
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-sm">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="grantera-high-resolution-logo-transparent (1).png" alt="Grantera Logo" class="h-10 w-auto">
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <div class="hidden lg:flex items-center space-x-6 text-sm font-medium">
+                    <a href="about.html" class="text-gray-600 hover:text-[#059669]">About Us</a>
+                    <a href="features.html" class="text-gray-600 hover:text-[#059669]">Features</a>
+                    <a href="#" class="text-[#059669] font-semibold">Pricing</a>
+                    <a href="faq.html" class="text-gray-600 hover:text-[#059669]">FAQ</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                     <a href="#" class="text-gray-600 hover:text-[#059669] text-sm font-medium">Sign In</a>
+                    <a href="#" class="group cta-gradient text-white font-semibold py-2.5 px-5 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                        <span>Get Started</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="py-16 md:py-24">
+        <div class="container mx-auto px-6">
+            <!-- Header -->
+            <div class="text-center max-w-4xl mx-auto mb-12">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900">Simple, transparent pricing</h1>
+                <p class="text-lg text-gray-600 mt-4">Choose the plan that fits your team's size and ambition. All plans start with a 14-day risk-free trial.</p>
+            </div>
+
+            <!-- Pricing Toggle -->
+            <div class="flex justify-center items-center space-x-4 mb-12">
+                <span id="monthly-label" class="font-semibold text-gray-800">Monthly</span>
+                <label class="switch">
+                    <input type="checkbox" id="pricing-toggle">
+                    <span class="slider"></span>
+                </label>
+                <span id="annual-label" class="font-medium text-gray-500">Annually</span>
+                <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-2.5 py-1 rounded-full">Save 20%</span>
+            </div>
+
+            <!-- Pricing Grid -->
+            <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
+                
+                <!-- Essential Plan -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 h-full flex flex-col">
+                    <div class="flex-grow">
+                        <h3 class="text-2xl font-bold text-gray-900">Essential</h3>
+                        <p class="text-gray-600 mt-2">For individuals & small teams getting started.</p>
+                        <p class="price-display text-5xl font-extrabold text-gray-900 mt-6" data-monthly-price="89" data-annual-price="71">$89<span class="text-lg font-medium text-gray-500"> / month</span></p>
+                        <ul class="mt-8 space-y-4 text-gray-700">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>1 User</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>1 Fundraising Project</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>20 AI Matches / mo</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>50 AI Documents / mo</li>
+                            <li class="flex items-center font-semibold"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>All Core Features</li>
+                             <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>30-Minute Training Call</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="w-full mt-8 block text-center bg-gray-200 text-gray-800 font-semibold py-3 rounded-lg hover:bg-gray-300 transition-colors">Start Free Trial</a>
+                </div>
+
+                <!-- Growth Plan (Most Popular) -->
+                <div class="bg-white p-8 rounded-2xl shadow-2xl border-2 border-green-500 relative h-full flex flex-col">
+                    <div class="flex-grow">
+                        <span class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-green-500 text-white text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full">Most Popular</span>
+                        <h3 class="text-2xl font-bold text-gray-900">Growth</h3>
+                        <p class="text-gray-600 mt-2">For growing teams that need to collaborate.</p>
+                        <div class="mt-6">
+                             <p class="price-display text-5xl font-extrabold text-gray-900" data-monthly-price="149" data-annual-price="119">$149<span class="text-lg font-medium text-gray-500"> / month</span></p>
+                        </div>
+                        <ul class="mt-8 space-y-4 text-gray-700">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Up to 5 Users</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>10 Fundraising Projects</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>100 AI Matches / mo</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>200 AI Documents / mo</li>
+                            <li class="flex items-center font-semibold"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>All Core Features</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>1-Hour Training Call</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="w-full mt-8 block text-center cta-gradient text-white font-semibold py-3 rounded-lg hover:opacity-90 transition-opacity">Start Free Trial</a>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 h-full flex flex-col">
+                    <div class="flex-grow">
+                        <h3 class="text-2xl font-bold text-gray-900">Pro</h3>
+                        <p class="text-gray-600 mt-2">For established organizations & power users.</p>
+                        <p class="price-display text-5xl font-extrabold text-gray-900 mt-6" data-monthly-price="229" data-annual-price="183">$229<span class="text-lg font-medium text-gray-500"> / month</span></p>
+                         <ul class="mt-8 space-y-4 text-gray-700">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Up to 10 Users</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Unlimited Projects</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Unlimited Matches</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Unlimited Documents</li>
+                            <li class="flex items-center font-semibold"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>All Core Features</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>3 x 1-Hour Training Calls</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="w-full mt-8 block text-center bg-gray-800 text-white font-semibold py-3 rounded-lg hover:bg-gray-900 transition-colors">Start Free Trial</a>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="max-w-4xl mx-auto mt-24">
+                <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Frequently Asked Questions</h2>
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="font-semibold text-lg text-gray-800">What's included in the 14-day free trial?</h3>
+                        <p class="text-gray-600 mt-2">Your free trial gives you full access to all the features of the plan you select. You can find matches, generate documents, and use the Grant Pipeline to see the full power of GranterAI. No credit card is required to start.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg text-gray-800">Can I change my plan later?</h3>
+                        <p class="text-gray-600 mt-2">Absolutely. You can upgrade, downgrade, or cancel your plan at any time from your account settings. Changes will be prorated.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg text-gray-800">Is my organization's data kept private and secure?</h3>
+                        <p class="text-gray-600 mt-2">Yes. We take data security very seriously. All your data is encrypted and stored securely. We will never share your sensitive fundraising information.</p>
+                    </div>
+                     <div>
+                        <h3 class="font-semibold text-lg text-gray-800">What kind of support is included?</h3>
+                        <p class="text-gray-600 mt-2">All of our plans include email support from our dedicated customer success team. We're here to help you make the most of GranterAI.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        const toggle = document.getElementById('pricing-toggle');
+        const monthlyLabel = document.getElementById('monthly-label');
+        const annualLabel = document.getElementById('annual-label');
+        const priceElements = document.querySelectorAll('.price-display');
+
+        toggle.addEventListener('change', (e) => {
+            const isAnnual = e.target.checked;
+            
+            if(isAnnual) {
+                monthlyLabel.classList.remove('font-semibold', 'text-gray-800');
+                monthlyLabel.classList.add('font-medium', 'text-gray-500');
+                annualLabel.classList.remove('font-medium', 'text-gray-500');
+                annualLabel.classList.add('font-semibold', 'text-gray-800');
+            } else {
+                annualLabel.classList.remove('font-semibold', 'text-gray-800');
+                annualLabel.classList.add('font-medium', 'text-gray-500');
+                monthlyLabel.classList.remove('font-medium', 'text-gray-500');
+                monthlyLabel.classList.add('font-semibold', 'text-gray-800');
+            }
+
+            priceElements.forEach(el => {
+                const monthlyPrice = el.getAttribute('data-monthly-price');
+                const annualPrice = el.getAttribute('data-annual-price');
+                
+                if (isAnnual) {
+                    el.innerHTML = `$${annualPrice}<span class="text-lg font-medium text-gray-500"> / month</span>`;
+                } else {
+                    el.innerHTML = `$${monthlyPrice}<span class="text-lg font-medium text-gray-500"> / month</span>`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
