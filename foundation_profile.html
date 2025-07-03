@@ -108,7 +108,7 @@
             const foundationEin = urlParams.get('ein');
 
             if (foundationEin) {
-                fetch(`http://127.0.0.1:5000/api/foundation/${foundationEin}`)
+                fetch(`https://grantera-website.onrender.com/${foundationEin}`)
                     .then(response => {
                         if (!response.ok) {
                             throw new Error('Foundation not found or server error.');
